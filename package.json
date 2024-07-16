@@ -37,6 +37,7 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "qs": "^6.12.3",
+    "swiper": "^11.1.4",
     "unplugin-vue-setup-extend-plus": "^1.0.1",
     "vue": "^3.4.29",
     "vue-echarts": "^6.7.3",
