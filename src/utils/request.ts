@@ -30,7 +30,9 @@ request.interceptors.request.use(
     return Object.assign({}, config, { headers: Object.assign({ Authorization: `Bearer ${token}` }, headers) });
   },
   (error) => {
-    NProgress.done();
+    if (NProgress.isRendered()) {
+      NProgress.done();
+    }
 
     return Promise.reject(error);
   },
@@ -38,7 +40,9 @@ request.interceptors.request.use(
 // 响应拦截器
 request.interceptors.response.use(
   async (response: AxiosResponse<any>) => {
-    NProgress.done();
+    if (NProgress.isRendered()) {
+      NProgress.done();
+    }
     const { status, data } = response;
     if (status === 200) {
       return Promise.resolve(data);
@@ -47,7 +51,9 @@ request.interceptors.response.use(
     }
   },
   (error: AxiosError) => {
-    NProgress.done();
+    if (NProgress.isRendered()) {
+      NProgress.done();
+    }
     return Promise.resolve(error);
   },
 );
