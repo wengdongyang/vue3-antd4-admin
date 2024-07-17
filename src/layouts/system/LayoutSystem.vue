@@ -17,7 +17,7 @@ import { useLoginFormState, useUserAuth } from '@src/stores';
 // components
 const storeLoginFormState = useLoginFormState();
 const { setLoginToken, setUserinfoPermissionsRoles } = useUserAuth();
-const { setLoginFormState, setIsRememberMe } = storeLoginFormState;
-const { computedLoginFormState, computedIsRememberMe } = storeToRefs(storeLoginFormState);
+const { setAdminLoginFormState, setAdminIsRememberMe } = storeLoginFormState;
+const { computedAdminLoginFormState, computedAdminIsRememberMe } = storeToRefs(storeLoginFormState);
 </script>
 <style lang="less" module></style>

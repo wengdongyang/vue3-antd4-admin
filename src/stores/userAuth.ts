@@ -14,36 +14,86 @@ import type { ILoginFormState, ILoginToken, IUserinfo } from '@src/types/index.d
 export const useLoginFormState = defineStore(
   'loginFormState',
   () => {
-    const LOGIN_FORM_STATE = ref<ILoginFormState>({});
-    const IS_REMEMBER_ME = ref<boolean>(false);
-
-    const computedLoginFormState = computed(() => get(LOGIN_FORM_STATE));
-
-    const computedIsRememberMe = computed(() => get(IS_REMEMBER_ME));
-
-    const setLoginFormState = (loginFormState: ILoginFormState) => {
+    ////////////////////系统用户////////////////////
+    const ADMIN_LOGIN_FORM_STATE = ref<ILoginFormState>({});
+    const ADMIN_IS_REMEMBER_ME = ref<boolean>(false);
+    const computedAdminLoginFormState = computed(() => get(ADMIN_LOGIN_FORM_STATE));
+    const computedAdminIsRememberMe = computed(() => get(ADMIN_IS_REMEMBER_ME));
+    const setAdminLoginFormState = (loginFormState: ILoginFormState) => {
       try {
-        set(LOGIN_FORM_STATE, lodash.cloneDeep(loginFormState));
+        set(ADMIN_LOGIN_FORM_STATE, lodash.cloneDeep(loginFormState));
+      } catch (error) {
+        console.warn(error);
+      }
+    };
+    const setAdminIsRememberMe = (isRememberMe: boolean) => {
+      try {
+        set(ADMIN_IS_REMEMBER_ME, lodash.cloneDeep(isRememberMe));
+      } catch (error) {
+        console.warn(error);
+      }
+    };
+    ////////////////////租户////////////////////
+    const TENANT_FORM_STATE = ref<ILoginFormState>({});
+    const TENANT_IS_REMEMBER_ME = ref<boolean>(false);
+    const computedTenantLoginFormState = computed(() => get(TENANT_FORM_STATE));
+    const computedTenantIsRememberMe = computed(() => get(TENANT_IS_REMEMBER_ME));
+    const setTenantLoginFormState = (loginFormState: ILoginFormState) => {
+      try {
+        set(TENANT_FORM_STATE, lodash.cloneDeep(loginFormState));
+      } catch (error) {
+        console.warn(error);
+      }
+    };
+    const setTenantIsRememberMe = (isRememberMe: boolean) => {
+      try {
+        set(TENANT_IS_REMEMBER_ME, lodash.cloneDeep(isRememberMe));
+      } catch (error) {
+        console.warn(error);
+      }
+    };
+    ////////////////////租户-子用户////////////////////
+    const SON_TENANT_FORM_STATE = ref<ILoginFormState>({});
+    const SON_TENANT_IS_REMEMBER_ME = ref<boolean>(false);
+    const computedSonTenantLoginFormState = computed(() => get(SON_TENANT_FORM_STATE));
+    const computedSonTenantIsRememberMe = computed(() => get(SON_TENANT_IS_REMEMBER_ME));
+    const setSonTenantLoginFormState = (loginFormState: ILoginFormState) => {
+      try {
+        set(SON_TENANT_FORM_STATE, lodash.cloneDeep(loginFormState));
       } catch (error) {
         console.warn(error);
       }
     };
 
-    const setIsRememberMe = (isRememberMe: boolean) => {
+    const setSonTenantIsRememberMe = (isRememberMe: boolean) => {
       try {
-        set(IS_REMEMBER_ME, lodash.cloneDeep(isRememberMe));
+        set(SON_TENANT_IS_REMEMBER_ME, lodash.cloneDeep(isRememberMe));
       } catch (error) {
         console.warn(error);
       }
     };
 
     return {
-      LOGIN_FORM_STATE,
-      IS_REMEMBER_ME,
-      computedLoginFormState,
-      computedIsRememberMe,
-      setLoginFormState,
-      setIsRememberMe,
+      ADMIN_LOGIN_FORM_STATE,
+      ADMIN_IS_REMEMBER_ME,
+      computedAdminLoginFormState,
+      computedAdminIsRememberMe,
+      setAdminLoginFormState,
+      setAdminIsRememberMe,
+
+      TENANT_FORM_STATE,
+      TENANT_IS_REMEMBER_ME,
+      computedTenantLoginFormState,
+      computedTenantIsRememberMe,
+      setTenantLoginFormState,
+      setTenantIsRememberMe,
+
+      SON_TENANT_FORM_STATE,
+      SON_TENANT_IS_REMEMBER_ME,
+      computedSonTenantLoginFormState,
+      computedSonTenantIsRememberMe,
+      setSonTenantLoginFormState,
+      setSonTenantIsRememberMe,
     };
   },
   { persist: { storage: localStorage } },

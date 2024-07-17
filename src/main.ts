@@ -20,6 +20,7 @@ import './styles/tailwind.css';
 import 'echarts';
 import 'dayjs/locale/zh-cn';
 
+import lodash from 'lodash';
 import dayjs from 'dayjs';
 import { createApp } from 'vue';
 import Antd from 'ant-design-vue';
@@ -35,6 +36,13 @@ const app = createApp(App);
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
+
+pinia.use(({ store }) => {
+  const initialState = lodash.cloneDeep(store.$state);
+  store.$reset = () => {
+    store.$state = initialState;
+  };
+});
 
 app.use(Antd);
 app.use(router);
