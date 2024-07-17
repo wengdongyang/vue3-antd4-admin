@@ -22,13 +22,17 @@ request.interceptors.request.use(
     }
 
     const { headers, url = '' } = config;
-    const token = sessionStorage.getItem(ENV.TOKEN_KEY);
+
     // 不需要token的白名单
     if (['/captchaImage', '/loginPlatform', '/loginTenant', '/loginSonTenant'].includes(url)) {
       return config;
+    } else {
+      const token = sessionStorage.getItem(ENV.TOKEN_KEY);
+      if (!token) {
+        console.warn(`token不存在!`, token);
+      }
+      return Object.assign({}, config, { headers: Object.assign({ Authorization: `Bearer ${token}` }, headers) });
     }
-
-    return Object.assign({}, config, { headers: Object.assign({ Authorization: `Bearer ${token}` }, headers) });
   },
   (error) => {
     if (NProgress.isRendered()) {
