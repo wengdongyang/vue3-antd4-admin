@@ -1,6 +1,13 @@
 /** @format */
-
+// apis
+// hooks
+// utils
 import { requestGet, requestPost } from '@src/utils';
+
+// stores
+// mixins
+// configs
+// components
 // 获取验证码
 export const apiGetCaptchaImage = () => {
   return requestGet({

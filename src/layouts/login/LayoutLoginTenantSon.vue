@@ -9,7 +9,8 @@ import { ref, computed } from 'vue';
 import { get, set, tryOnMounted } from '@vueuse/core';
 // apis
 // hooks
-// types
+// utils
+
 // stores
 // configs
 // components

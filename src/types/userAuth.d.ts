@@ -1,5 +1,18 @@
 /** @format */
+// apis
+// hooks
+// utils
+// stores
+// mixins
+// configs
+// components
 // 登陆信息
+export type ILoginFormState = Partial<{
+  username: string;
+  password: string;
+  [key: string]: any;
+}>;
+// 用户的token等信息
 export type ILoginToken = Partial<{
   token: string;
   mgToken: string;
@@ -19,7 +32,7 @@ type IRole = Partial<{
   flag: boolean;
   admin: boolean;
 }>;
-// 用户信息
+// 用户的个人信息
 export type IUserinfo = Partial<{
   createBy: string;
   createTime: string;

@@ -4,12 +4,14 @@
   <img :class="$style['captcha-image']" />
 </template>
 <script lang="tsx" setup>
-import { ref, computed } from 'vue';
-import { message } from 'ant-design-vue';
 import { get, set, tryOnMounted } from '@vueuse/core';
+import { message } from 'ant-design-vue';
+import { storeToRefs } from 'pinia';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 // apis
 // hooks
-// types
+
 // stores
 // configs
 // components

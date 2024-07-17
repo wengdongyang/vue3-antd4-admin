@@ -1,3 +1,9 @@
 /** @format */
-
-export * from './userinfo.d';
+// apis
+// hooks
+// utils
+// stores
+// mixins
+// configs
+// components
+export * from './userAuth.d';

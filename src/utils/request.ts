@@ -3,7 +3,7 @@ import axios from 'axios';
 import NProgress from 'nprogress';
 // apis
 // hooks
-// types
+// utils
 import type { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 // stores
 // configs

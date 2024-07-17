@@ -3,7 +3,7 @@
 <template>
   <img :class="$style['captcha-image']" :src="captchaImage" @click="getCaptchaImage" />
 </template>
-<script lang="tsx" setup>
+<script lang="jsx" setup>
 import { ref, computed } from 'vue';
 import { message } from 'ant-design-vue';
 import { get, set, tryOnMounted } from '@vueuse/core';
@@ -11,7 +11,7 @@ import { get, set, tryOnMounted } from '@vueuse/core';
 import { apiGetCaptchaImage } from '@src/apis';
 
 // hooks
-// types
+
 // stores
 // configs
 // components

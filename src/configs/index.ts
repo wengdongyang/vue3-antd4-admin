@@ -1,9 +1,8 @@
 /** @format */
-
 // apis
 // hooks
 // utils
-// types
+
 // stores
 // mixins
 // configs
