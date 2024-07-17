@@ -23,6 +23,7 @@ request.interceptors.request.use(
 
     const { headers, url = '' } = config;
     const token = sessionStorage.getItem(ENV.TOKEN_KEY);
+    // 不需要token的白名单
     if (['/captchaImage', '/loginPlatform', '/loginTenant', '/loginSonTenant'].includes(url)) {
       return config;
     }
