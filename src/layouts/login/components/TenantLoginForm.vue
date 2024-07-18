@@ -1,8 +1,8 @@
 <!-- @format -->
 <template>
   <a-form class="form" layout="vertical" :model="formState" @finish="onFinish" size="large">
-    <a-form-item class="form-item" label="账号" name="username" :rules="[{ required: true }]">
-      <a-input class="input" v-model:value="formState.username" placeholder="账号" type="text" />
+    <a-form-item class="form-item" label="租户账号" name="username" :rules="[{ required: true }]">
+      <a-input class="input" v-model:value="formState.username" placeholder="租户账号" type="text" />
     </a-form-item>
     <a-form-item class="form-item" label="密码" name="password" :rules="[{ required: true }]">
       <a-input class="input" v-model:value="formState.password" placeholder="密码" type="password" />
