@@ -123,28 +123,6 @@ tryOnMounted(() => {
   initFormState();
 });
 </script>
-<style lang="less">
-.form {
-  .form-item {
-    .input {
-      margin-bottom: 0;
-    }
-    .captcha-image {
-      overflow: hidden;
-
-      height: 40px;
-      margin-bottom: 0;
-
-      cursor: pointer;
-
-      border-radius: 4px;
-    }
-    .remember-me {
-      margin-bottom: 0;
-    }
-    .login-btn {
-      margin-bottom: 0;
-    }
-  }
-}
+<style lang="less" scoped>
+@import './LoginForm.less';
 </style>
