@@ -37,7 +37,7 @@ import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 // apis
-import { apiGetGetInfo, apiPostLoginTenant } from '@src/apis';
+import { apiGetGetInfo, apiPostLoginSonTenant } from '@src/apis';
 // hooks
 // utils
 // stores
@@ -97,7 +97,7 @@ const onUpdateCaptchaImage = () => {
 const onFinish = async () => {
   try {
     const values = get(formState);
-    const res = await apiPostLoginTenant(values);
+    const res = await apiPostLoginSonTenant(values);
     const innerIsRememberMe = get(isRememberMe);
 
     const { code, msg } = res;
